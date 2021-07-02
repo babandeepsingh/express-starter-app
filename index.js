@@ -14,17 +14,11 @@ const repoURL = 'https://github.com/babandeepsingh/Express-Starter-Kit.git';
 
 runCommand('git', ['clone', repoURL, name])
   .then(() => {
-    return runCommand('rm', ['-rf', `${name}/.git`]);
-  }).then(() => {
-    console.log('Installing dependencies...');
-    return runCommand('npm', ['install'], {
-      cwd: process.cwd() + '/' + name
-    });
-  }).then(() => {
     console.log('Done! 🏁');
     console.log('');
     console.log('To get started:');
     console.log('cd', name);
+    console.log('npm install')
     console.log('npm run dev');
   });
 
